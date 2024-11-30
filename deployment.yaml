@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs1
+  labels:
+    app: nodejs1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs1
+  template:
+    metadata:
+      labels:
+        app: nodejs1
+    spec:
+      containers:
+      - name: nodejs1
+        image: neehar2601/nodejsweb2:v1
+        ports:
+        - containerPort: 80
